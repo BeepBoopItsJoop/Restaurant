@@ -1,3 +1,10 @@
+const recipeArray = [
+    ['Title', 'Description'],
+    ['Title1', 'Description1'],
+    ['Title2', 'Description2'],
+    ['Title3', 'Description3']
+]
+
 const generateMenu = () => {
     const menuDiv = document.createElement('div')
     menuDiv.classList.add('menu')
@@ -30,13 +37,20 @@ const generateMenuItem = (title, desciption) => {
     return menuItemDiv
 }
 
-const container = document.querySelector('#content')
+const switchToMenu = () => {
+    const menuDiv = generateMenu()
+    for (let i = 0; i < recipeArray.length; i++) {
+             menuDiv.append(generateMenuItem(recipeArray[i][0], recipeArray[i][1]))
+         }
+    const container = document.querySelector('#content')
+    container.replaceChildren(menuDiv)
+    
+}
 
-const menuDiv = generateMenu()
-menuDiv.append(generateMenuItem('Title', 'Description Description Description Description Description '))
-menuDiv.append(generateMenuItem('Title', 'Description'))
-menuDiv.append(generateMenuItem('Title', 'Description'))
-menuDiv.append(generateMenuItem('Title', 'Description'))
+const menuButton = document.querySelector('#menu')
 
-container.append(menuDiv)
-
+menuButton.addEventListener('click', () => {
+    // delete this later
+    switchToMenu()
+    menuButton.classList.add('active')
+})
