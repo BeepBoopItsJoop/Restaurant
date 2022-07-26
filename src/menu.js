@@ -1,17 +1,42 @@
+const generateMenu = () => {
+    const menuDiv = document.createElement('div')
+    menuDiv.classList.add('menu')
+    return menuDiv
+}
+
+const generateMenuItem = (title, desciption) => {
+        //  Creating elements
+    const menuItemDiv = document.createElement('div')
+    const itemImagePlaceholderDiv = document.createElement('div')
+    const itemContentDiv = document.createElement('div')
+    const itemTitleSpan = document.createElement('span')
+    const itemTextSpan= document.createElement('span')
+
+    // Adding classes
+    menuItemDiv.classList.add('menu-item')
+    itemImagePlaceholderDiv.classList.add('item-image-placeholder')
+    itemContentDiv.classList.add('item-content')
+    itemTitleSpan.classList.add('item-title')
+    itemTextSpan.classList.add('item-text')
+
+    // Setting text content
+    itemTitleSpan.innerText = title
+    itemTextSpan.innerText = desciption
+
+    // Appending
+    itemContentDiv.append(itemTitleSpan, itemTextSpan)
+    menuItemDiv.append(itemImagePlaceholderDiv, itemContentDiv)
+
+    return menuItemDiv
+}
+
 const container = document.querySelector('#content')
 
-// const menuDiv = document.createElement('div')
-// menuDiv.className = "menu"
+const menuDiv = generateMenu()
+menuDiv.append(generateMenuItem('Title', 'Description Description Description Description Description '))
+menuDiv.append(generateMenuItem('Title', 'Description'))
+menuDiv.append(generateMenuItem('Title', 'Description'))
+menuDiv.append(generateMenuItem('Title', 'Description'))
 
-// const menuItem = document.createElement('div')
-// menuItem.className = "menu-item"
-// menuItem.innerText = 'Vegan'
+container.append(menuDiv)
 
-// const menuItem1 = document.createElement('div')
-// menuItem1.className = "menu-item"
-// menuItem1.innerText = 'Duda'
-
-// menuDiv.append(menuItem)
-// menuDiv.append(menuItem1)
-
-// container.append(menuDiv)
