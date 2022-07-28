@@ -12,7 +12,7 @@ const generateMenu = () => {
 }
 
 const generateMenuItem = (title, desciption) => {
-        //  Creating elements
+    //  Creating elements
     const menuItemDiv = document.createElement('div')
     const itemImagePlaceholderDiv = document.createElement('div')
     const itemContentDiv = document.createElement('div')
@@ -37,20 +37,16 @@ const generateMenuItem = (title, desciption) => {
     return menuItemDiv
 }
 
-const switchToMenu = () => {
+const loadMenu = () => {
     const menuDiv = generateMenu()
+
     for (let i = 0; i < recipeArray.length; i++) {
              menuDiv.append(generateMenuItem(recipeArray[i][0], recipeArray[i][1]))
          }
+
     const container = document.querySelector('#content')
     container.replaceChildren(menuDiv)
     
 }
 
-const menuButton = document.querySelector('#menu')
-
-menuButton.addEventListener('click', () => {
-    // delete this later
-    switchToMenu()
-    menuButton.classList.add('active')
-})
+export { loadMenu }
