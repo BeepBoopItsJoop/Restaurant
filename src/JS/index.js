@@ -1,6 +1,7 @@
 import '../style.css';
-import { loadMenu } from './menu.js';
-import { loadContact } from './contact.js';
+import { loadMenu } from './menu';
+import { loadContact } from './contact';
+import { loadHome } from './home';
 
 const menuButton = document.querySelector('#menu')
 
@@ -15,4 +16,11 @@ const contactButton = document.querySelector('#contact')
 contactButton.addEventListener('click', () => {
     loadContact()
     contactButton.classList.add('active')
+})
+
+const homeButton = document.querySelector('#home')
+
+homeButton.addEventListener('click', () => {
+    loadHome()
+    homeButton.classList.add('active')
 })
