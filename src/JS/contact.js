@@ -34,11 +34,4 @@ const generateContact= () => {
     return contactDiv
 }
 
-const loadContact = () => {
-    const contactDiv = generateContact()
-
-    const container = document.querySelector('#content')
-    container.replaceChildren(contactDiv)
-}
-
-export { loadContact }
+export { generateContact }

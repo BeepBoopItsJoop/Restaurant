@@ -5,11 +5,6 @@ const recipeArray = [
     ['Title3', 'Description3']
 ]
 
-const generateMenu = () => {
-    const menuDiv = document.createElement('div')
-    menuDiv.classList.add('menu')
-    return menuDiv
-}
 
 const generateMenuItem = (title, desciption) => {
     //  Creating elements
@@ -37,16 +32,15 @@ const generateMenuItem = (title, desciption) => {
     return menuItemDiv
 }
 
-const loadMenu = () => {
-    const menuDiv = generateMenu()
+const generateMenu = () => {
+    const menuDiv = document.createElement('div')
+    menuDiv.classList.add('menu')
 
     for (let i = 0; i < recipeArray.length; i++) {
-             menuDiv.append(generateMenuItem(recipeArray[i][0], recipeArray[i][1]))
-         }
+        menuDiv.append(generateMenuItem(recipeArray[i][0], recipeArray[i][1]))
+    }
 
-    const container = document.querySelector('#content')
-    container.replaceChildren(menuDiv)
-    
+    return menuDiv
 }
 
-export { loadMenu }
+export { generateMenu }
