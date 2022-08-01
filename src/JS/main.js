@@ -1,8 +1,8 @@
 const generateMain = () => {
-    const mainNode = document.createElement('main')
-    mainNode.id = 'content'
+  const mainNode = document.createElement('main')
+  mainNode.id = 'content'
 
-    return mainNode
+  return mainNode
 }
 
 export { generateMain }
