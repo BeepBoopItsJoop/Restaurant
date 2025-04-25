@@ -6,6 +6,7 @@ Project made in 2022 with the point of getting used to:
 * Manipulating the DOM
 * Using Webpack to build, bundle and minify the website
 # Preview
+[Hosted on (i hope)](https://restaurant-ljwo-lzk5ful1b-beepboopitsjoops-projects.vercel.app)
 ![Home Page](./readme_img/home.png)  
 ![Menu Page](./readme_img/menu.png)
 # Usage
